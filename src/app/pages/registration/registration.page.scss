@@ -1,0 +1,29 @@
+ion-content {
+    --background: lightgray;
+}
+
+ion-card {
+    width: 260px;
+    height: 400px;
+    margin-left: 1.4cm;
+    margin-top: 2cm;
+}
+
+.input-one input {
+    color: black;
+    outline: none;
+    border-color: lightgray;
+    border-radius: 5px;
+}
+
+.button {
+    margin-top: 0.4cm;
+}
+
+.icon {
+    margin-left: 4cm;
+}
+
+.alert-danger {
+    color: red;
+}
