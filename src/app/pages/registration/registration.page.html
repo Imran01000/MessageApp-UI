@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="secondary">
+        <ion-title>
+            <span>Message App</span>
+            <ion-icon class="icon" size="large" name="logo-whatsapp"></ion-icon>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div id="container">
+        <ion-card color="secondary">
+            <ion-card-header>
+                <ion-card-title>Registration</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <form [formGroup]="form">
+                    <div class="input-one">
+                        <input placeholder="Enter your first name" formControlName="firstName" />
+
+                    </div>
+                    <div *ngIf="form.controls['firstName'].touched &&
+                    form.controls['firstName'].invalid" class="alert-danger">
+                        first name is required!</div>
+                    <br/>
+                    <div class="input-one">
+                        <input placeholder="Enter your last name" formControlName="lastName" />
+                    </div>
+                    <div *ngIf="form.controls['lastName'].touched &&
+                    form.controls['lastName'].invalid" class="alert-danger">
+                        last name is required!</div>
+                    <br/>
+                    <div class="input-one">
+                        <input placeholder="Enter your email" formControlName="email" required/>
+                    </div>
+                    <div *ngIf="form.controls['email'].touched &&
+                    form.controls['email'].invalid" class="alert-danger">
+                        please provide valid mail!</div>
+                    <br/>
+                    <div class="input-one">
+                        <input placeholder="Enter password" type="password" />
+                    </div>
+                    <div *ngIf="form.controls['password'].touched &&
+                         form.controls['password'].invalid" class="alert-danger">
+                        More than 6 character required!</div>
+                    <br/>
+                    <div class="input-one">
+                        <input placeholder="Reconfirm password" type="password" />
+                    </div>
+                    <br/>
+                    <div class="input-one">
+                        <input placeholder="Enter MobileNo" />
+                    </div>
+
+                    <div class="button">
+                        <ion-button color="secondary">Create</ion-button>
+                        <ion-button color="secondary" style="margin-left: 0.7cm;" [routerLink]="['/home']">Login-In</ion-button>
+                    </div>
+                </form>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
