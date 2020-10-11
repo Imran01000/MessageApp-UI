@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="secondary">
+        <ion-title>
+            <span>Message App</span>
+            <ion-icon class="icon" size="large" name="logo-whatsapp"></ion-icon>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div id="container">
+        <ion-card color="secondary">
+            <ion-card-header>
+                <ion-card-title>Login</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <div class="input-one">
+                    <input placeholder="email/username" />
+                </div>
+                <div *ngIf="form.controls['email'].touched &&
+                    form.controls['email'].invalid" class="alert-danger">
+                    username or email is required!</div>
+                <br/>
+                <div class="input-one">
+                    <input placeholder="password" />
+                </div>
+                <div *ngIf="form.controls['password'].touched &&
+                form.controls['password'].invalid" class="alert-danger">
+                    More than 6 character required!</div>
+                <a href="www.facebook.com" style="color:darkred;">Forget Password?</a>
+                <div class="button">
+                    <ion-button color="secondary">SignIn</ion-button>
+                    <ion-button color="secondary" style="margin-left: 0.7cm;" [routerLink]="['/registration']">SignUp</ion-button>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
